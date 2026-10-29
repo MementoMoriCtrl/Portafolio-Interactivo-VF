@@ -1,0 +1,277 @@
+
+/* =========================================
+   1. ESTILOS GENERALES
+   ========================================= */
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f7fc;
+    color: #212529;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+section {
+    scroll-margin-top: 70px;
+}
+
+h1 span {
+    color: #0d6efd;
+}
+
+/* =========================================
+   2. PRESENTACIÓN
+   ========================================= */
+
+.hero {
+    background: linear-gradient(135deg, #e8f0ff, #ffffff);
+    padding: 80px 20px !important;
+}
+
+.hero h1 {
+    color: #172554;
+}
+
+.hero p {
+    color: #5c667a;
+}
+
+
+/* =========================================
+   3. TARJETAS Y TRANSFORMACIONES 2D
+   ========================================= */
+
+.project-card {
+    border: 1px solid transparent;
+    border-radius: 16px;
+    min-height: 150px;
+    box-shadow: 0 8px 20px rgba(20, 30, 60, 0.10);
+
+    /* Transición suave */
+    transition: transform 0.45s ease, box-shadow 0.45s ease;
+}
+
+/* TARJETA 1: AZUL ELEGANTE - ROTACIÓN */
+.row.g-4 > div:nth-child(1) .project-card {
+    background: linear-gradient(135deg, #e0edff, #b8d4ff);
+    border-color: #8bb8ff;
+    color: #17345f;
+}
+
+.row.g-4 > div:nth-child(1) .project-card:hover {
+    transform: rotate(7deg);
+    box-shadow: 0 16px 30px rgba(37, 99, 235, 0.25);
+}
+
+/* TARJETA 2: VIOLETA - ESCALADO */
+.row.g-4 > div:nth-child(2) .project-card {
+    background: linear-gradient(135deg, #eee5ff, #d4bfff);
+    border-color: #b99aff;
+    color: #40236b;
+}
+
+.row.g-4 > div:nth-child(2) .project-card:hover {
+    transform: scale(1.16);
+    box-shadow: 0 18px 35px rgba(124, 58, 237, 0.30);
+    z-index: 2;
+}
+
+/* TARJETA 3: VERDE ESMERALDA - TRASLACIÓN */
+.row.g-4 > div:nth-child(3) .project-card {
+    background: linear-gradient(135deg, #d8f5e8, #a6e8cc);
+    border-color: #7bd5ae;
+    color: #164c3a;
+}
+
+.row.g-4 > div:nth-child(3) .project-card:hover {
+    transform: translateY(-16px);
+    box-shadow: 0 18px 32px rgba(5, 150, 105, 0.25);
+}
+
+/* Mejora la legibilidad del contenido */
+.project-card .card-title {
+    font-weight: 700;
+    margin-bottom: 14px;
+}
+
+.project-card .card-text {
+    line-height: 1.6;
+}
+
+
+/* 4. TRANSFORMACIÓN 3D */
+   
+
+.perspective-container {
+    perspective: 1000px;
+    padding: 35px 15px;
+}
+
+
+.card-3d {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 45px 30px;
+    text-align: center;
+    color: #ffffff;
+
+    background: linear-gradient(135deg, #0d6efd, #6f42c1);
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+
+    transform-style: preserve-3d;
+    transform: rotateX(0deg) rotateY(0deg);
+
+    transition: transform 0.6s ease, box-shadow 0.6s ease;
+}
+
+/* Gira la tarjeta en los ejes X e Y */
+.card-3d:hover {
+    transform: rotateX(30deg) rotateY(30deg);
+    box-shadow: 0 25px 45px rgba(13, 110, 253, 0.35);
+}
+
+.card-3d h3 {
+    margin-bottom: 15px;
+}
+
+.card-3d p {
+    margin-bottom: 0;
+    line-height: 1.6;
+}
+
+/* =========================================
+   5. FORMULARIO DE CONTACTO
+   ========================================= */
+
+#contacto {
+    background-color: #ffffff;
+}
+
+#formContacto {
+    padding: 25px;
+    background-color: #f8faff;
+    border: 1px solid #e0e7f1;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+}
+
+#formContacto .form-control {
+    border-radius: 8px;
+}
+
+#formContacto .form-control:focus {
+    border-color: #86b7fe;
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.15);
+}
+
+#formContacto .btn {
+    padding: 10px 20px;
+}
+
+/*  6. LOADER ANIMADO*/
+
+
+.loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+
+.loader {
+    width: 35px;
+    height: 35px;
+    border: 4px solid #dbeafe;
+    border-top: 4px solid #0d6efd;
+    border-right: 4px solid #6f42c1;
+    border-radius: 50%;
+
+    animation-name: girarLoader;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes girarLoader {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* =========================================
+   7. RESPONSIVIDAD
+   ========================================= */
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 55px 15px !important;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .perspective-container {
+        padding: 25px 10px;
+    }
+
+    .card-3d {
+        padding: 35px 20px;
+    }
+
+    /* Evita que el escalado sobresalga en pantallas pequeñas */
+    .project-card {
+        margin-bottom: 5px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .project-card,
+    .card-3d {
+        transition: none;
+    }
+}
+
+
+/* IMAGEN DENTRO DE LA TARJETA 3D */
+
+.imagen-3d {
+    width: 100%;
+    max-width: 420px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+
+/* ANIMACIÓN INFINITA DE TEXTO DE IZQUIERDA A DERECHA */
+
+.hero h1 {
+    animation: deslizarDerecha 4s ease-in-out infinite alternate;
+}
+
+@keyframes deslizarDerecha {
+    from {
+        transform: translateX(-60px);
+        opacity: 0.5;
+    }
+
+    to {
+        transform: translateX(60px);
+        opacity: 1;
+    }
+}
