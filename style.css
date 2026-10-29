@@ -227,7 +227,6 @@ h1 span {
         padding: 35px 20px;
     }
 
-    /* Evita que el escalado sobresalga en pantallas pequeñas */
     .project-card {
         margin-bottom: 5px;
     }
